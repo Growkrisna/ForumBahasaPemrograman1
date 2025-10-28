@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class forumswichcase {
+public class forum5swichcase {
     public static void main(String[] args) {
         Scanner a = new Scanner(System.in);
 

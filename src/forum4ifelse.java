@@ -2,7 +2,7 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 import java.util.Scanner;
 
-public class forumifelse {
+public class forum4ifelse {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
