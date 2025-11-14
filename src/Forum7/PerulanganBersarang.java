@@ -9,6 +9,9 @@ public class PerulanganBersarang {
         int total_biaya = 0, kembali;
         boolean beli = false, aplikasi = true;
 
+        // Variabel baru untuk menyimpan total pemasukan
+        int totalPemasukan = 0;
+
         // Data menu dan harga disimpan di luar agar bisa diakses semua peran
         String[] menu = {"Espresso", "Americano", "Cafe Latte", "Cafe Mocca", "Cappuccino"};
         int[] harga = {8000, 10000, 15000, 15000, 15000};
@@ -60,8 +63,12 @@ public class PerulanganBersarang {
 
                     if (bayar >= total_biaya) {
                         System.out.println("Kembalian kamu: Rp" + kembali);
+                        // Tambahkan transaksi sukses ke total pemasukan
+                        totalPemasukan += total_biaya;
+                        System.out.println("Transaksi berhasil! Pemasukan bertambah Rp" + total_biaya);
                     } else {
                         System.out.println("Uangmu kurang WOII");
+                        System.out.println("Transaksi dibatalkan!");
                     }
 
                     System.out.println("\nKembali ke menu utama...\n");
@@ -70,7 +77,7 @@ public class PerulanganBersarang {
                 case 2:
                     boolean ubahLagi = true;
                     while (ubahLagi) {
-                        System.out.println("\n=== MODE ADMIN ===");
+                        System.out.println("\n|| MODE ADMIN ||");
                         System.out.println("Daftar harga saat ini:");
                         for (int i = 0; i < menu.length; i++) {
                             System.out.println((i + 1) + ". " + menu[i] + " - Rp" + harga[i]);
@@ -103,8 +110,13 @@ public class PerulanganBersarang {
                     break;
 
                 case 3:
-                    System.out.println("\nFitur Owner belum diaktifkan.");
-                    System.out.println("Kembali ke menu utama...\n");
+                    System.out.println("|| MODE OWNER ||");
+                    System.out.println("Total Semua Transaksi Penjualan");
+
+                    System.out.println("Total Pemasukan: Rp" + totalPemasukan);
+
+
+                    System.out.println("\nKembali ke menu utama...\n");
                     break;
 
                 case 4:
