@@ -110,7 +110,7 @@ public class PerulanganBersarang {
                     break;
 
                 case 3:
-                    System.out.println("|| MODE OWNER ||");
+                    System.out.println("|| MODE OWNER || ");
                     System.out.println("Total Semua Transaksi Penjualan");
 
                     System.out.println("Total Pemasukan: Rp" + totalPemasukan);
