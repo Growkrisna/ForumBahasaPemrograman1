@@ -285,10 +285,13 @@ public class Kasir_Kopi_UMKM {
     }
 
     static void login() {
+        // Login user
         String id_user = "kris",
                 pass_user = "123",
+                // Login admin
                 id_admin = "kay",
                 pass_admin = "321",
+                // login owner
                 id_owner = "wee",
                 pass_owner = "213";
 
