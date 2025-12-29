@@ -141,70 +141,42 @@ public class Kasir_Kopi_UMKM {
         return -1;
     }
 
-    static void menuAdmin () {
-            boolean admin = true;
-            while (admin){
-                System.out.println("\n|| MODE ADMIN ||");
-                System.out.println("|| 1.Ubah harga menu ");
-                System.out.println("|| 2.Selesai");
-                int pilihmenu = scan.nextInt();
-                if (pilihmenu == 1){
+    static int ubahHarga(){
+        return 0;
+    }
 
-                    System.out.println("\nPilih kategori:");
-                    System.out.println("1. Coffee");
-                    System.out.println("2. Non Coffee");
-                    System.out.print("Pilihan: ");
-                    int pilihjenis = scan.nextInt();
+    static int tambahMenu(){
+        return 0;
+    }
 
-                    System.out.print("\nMasukkan nama menu yang ingin dicari: ");
-                    scan.nextLine(); // buang enter
-                    String cari = scan.nextLine();
+    static int hapusMenu(){
+        return 0;
+    }
 
-                    if (pilihjenis == 1) {
-                        int index = cari_Coffee(cari);
+    static void menuAdmin() {
+        boolean admin = true;
+        while (admin) {
+            System.out.println("\n|| MODE ADMIN ||");
+            System.out.println("|| 1. Tampilkan Menu");
+            System.out.println("|| 2. Ubah Harga");
+            System.out.println("|| 3. Tambah Menu");
+            System.out.println("|| 4. Hapus Menu");
+            System.out.println("|| 5. Kembali");
+            System.out.print("|| Pilih: ");
 
-                        if (index != -1) {
-                            System.out.println("Menu ditemukan: " + menu_Coffe[index]);
-                            System.out.println("Harga lama: Rp" + harga_Coffe[index]);
-                            System.out.print("Masukkan harga baru: Rp");
-                            int hargaBaru = scan.nextInt();
+            int pilih = scan.nextInt();
 
-                            if (hargaBaru > 0) {
-                                harga_Coffe[index] = hargaBaru;
-                                System.out.println("Harga berhasil diubah!");
-                            }
-                        } else {
-                            System.out.println("Menu tidak ditemukan!");
-                        }
-
-                    } else if (pilihjenis == 2) {
-                        int index = cari_nonCoffee(cari);
-
-                        if (index != -1) {
-                            System.out.println("Menu ditemukan: " + menu_nonCoffe[index]);
-                            System.out.println("Harga lama: Rp" + harga_nonCoffe[index]);
-                            System.out.print("Masukkan harga baru: Rp");
-                            int hargaBaru = scan.nextInt();
-
-                            if (hargaBaru > 0) {
-                                harga_nonCoffe[index] = hargaBaru;
-                                System.out.println("Harga berhasil diubah!");
-                            }
-                        } else {
-                            System.out.println("Menu tidak ditemukan!");
-                        }
-                    }
-                } else if(pilihmenu == 2) {
-                    System.out.println("\n|| See you next time!!\n");
-                    admin = false;
-                } else {
-                    System.out.println("Tidak ada pilihan yang sesuai");
-                }
-
-
-
+            switch (pilih) {
+                case 1 -> menu_Coffe();
+                case 2 -> ubahHarga();      // method lama kamu
+                case 3 -> tambahMenu();
+                case 4 -> hapusMenu();
+                case 5 -> admin = false;
+                default -> System.out.println("|| Pilihan tidak valid!");
             }
         }
+    }
+
 
     static void sort_Coffee() {
         for (int i = 0; i < terjual_Coffe.length - 1; i++) {
